@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% endblock %}
+{% block body %}
+    {% include 'template/header.html.twig' %}
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% include 'template/footer.html.twig' %}
+{% endblock %}

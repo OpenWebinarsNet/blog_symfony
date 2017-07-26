@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+    {% for type,messages in app.session.flashbag.all %}
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    {% endfor %}
+
+    <h2>{% trans with {'%name%': 'Fabien'} %}Hello %name%{% endtrans %}, {% trans %}symfony.great{% endtrans %}</h2>
+    Locale = {{ locale }}
+    {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('post_new') }}">Crear Nuevo</a>
+    {% endif %}
+    <ul>
+    {% for post in posts %}
+        <li>Artículo ID: {{ post.id }}. <a href="{{ path('post_view',{'id':post.id}) }}">{{ post.title }}</a> -> <a href="{{ path('post_edit',{'id':post.id}) }}">Editar</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Edición del artículo {{ post.title }}{% endblock %}
+{% block content %}
+<h2>Edición del artículo {{ post.title }}</h2>
+
+{{ form(form) }}
+
+{% endblock %}

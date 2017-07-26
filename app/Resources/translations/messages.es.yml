@@ -1,0 +1,9 @@
+'Hello %name%': Hola %name%
+symfony:
+    great: Me encanta Symfony
+
+
+form:
+    email:
+        label:
+        placeholder:
